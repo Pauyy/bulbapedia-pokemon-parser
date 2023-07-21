@@ -1,0 +1,39 @@
+614 	Beartic 	Beartic 	Sitrus Berry Sitrus Berry 	Shadow Claw 	Stone Edge 	Avalanche 	Bulk Up 	Brave 	- 	255 	- 	255 	- 	-
+567 	Archeops 	Archeops 	Sitrus Berry Sitrus Berry 	Quick Attack 	Acrobatics 	Crunch 	U-turn 	Jolly 	- 	255 	- 	- 	- 	255
+539 	Sawk 	Sawk 	Focus Sash Focus Sash 	Earthquake 	Payback 	Endure 	Reversal 	Naughty 	- 	255 	- 	- 	- 	255
+589 	Escavalier 	Escavalier 	Quick Claw Quick Claw 	Pursuit 	Counter 	X-Scissor 	Swords Dance 	Naughty 	255 	255 	- 	- 	- 	-
+617 	Accelgor 	Accelgor 	Petaya Berry Petaya Berry 	Energy Ball 	Sludge Bomb 	Bug Buzz 	Endure 	Modest 	- 	- 	- 	255 	- 	255
+530 	Excadrill 	Excadrill 	Chople Berry Chople Berry 	Dig 	Metal Sound 	Metal Claw 	Swords Dance 	Adamant 	- 	255 	255 	- 	- 	-
+628 	Braviary 	Braviary 	Persim Berry Persim Berry 	Thrash 	Bulk Up 	Superpower 	Pluck 	Naughty 	- 	255 	- 	- 	- 	255
+620 	Mienshao 	Mienshao 	King's Rock King's Rock 	Fake Out 	Fling 	Acrobatics 	Hi Jump Kick 	Jolly 	- 	255 	- 	- 	- 	255
+584 	Vanilluxe 	Vanilluxe 	Occa Berry Occa Berry 	Avalanche 	Ice Shard 	Natural Gift 	Giga Impact 	Lonely 	255 	255 	- 	- 	- 	-
+612 	Haxorus 	Haxorus 	Persim Berry Persim Berry 	Outrage 	Rock Slide 	Counter 	Dragon Dance 	Naughty 	170 	- 	170 	- 	- 	170
+567 	Archeops 	Archeops 	Enigma Berry Enigma Berry 	Earthquake 	Earth Power 	Endeavor 	AncientPower 	Mild 	- 	- 	- 	255 	- 	255
+539 	Sawk 	Sawk 	Expert Belt Expert Belt 	Close Combat 	Payback 	Low Sweep 	Earthquake 	Jolly 	- 	255 	- 	- 	- 	255
+555 	Darmanitan 	Darmanitan 	Liechi Berry Liechi Berry 	Flame Charge 	Earthquake 	Flare Blitz 	Brick Break 	Jolly 	- 	255 	- 	- 	- 	255
+623 	Golurk 	Golurk 	Lum Berry Lum Berry 	DynamicPunch 	Shadow Punch 	Earthquake 	Rock Slide 	Adamant 	255 	255 	- 	- 	- 	-
+615 	Cryogonal 	Cryogonal 	Occa Berry Occa Berry 	Icy Wind 	Flash Cannon 	Blizzard 	Sheer Cold 	Timid 	- 	- 	- 	255 	- 	255
+579 	Reuniclus 	Reuniclus 	Colbur Berry Colbur Berry 	Calm Mind 	Psychic 	Focus Blast 	Shadow Ball 	Quiet 	- 	- 	255 	255 	- 	-
+625 	Bisharp 	Bisharp 	Chople Berry Chople Berry 	Iron Head 	Night Slash 	Low Sweep 	Sucker Punch 	Jolly 	- 	255 	- 	- 	- 	255
+534 	Conkeldurr 	Conkeldurr 	Sitrus Berry Sitrus Berry 	Bulk Up 	Drain Punch 	Payback 	Stone Edge 	Adamant 	- 	255 	- 	- 	255 	-
+553 	Krookodile 	Krookodile 	Dark Gem Dark Gem 	Earthquake 	Crunch 	Stone Edge 	Dragon Tail 	Adamant 	- 	255 	- 	- 	255 	-
+628 	Braviary 	Braviary 	Flying Gem Flying Gem 	Brave Bird 	Return 	U-turn 	Rock Slide 	Adamant 	- 	255 	- 	- 	- 	255
+609 	Chandelure 	Chandelure 	White Herb White Herb 	Overheat 	Shadow Ball 	Protect 	Will-O-Wisp 	Modest 	255 	- 	- 	255 	- 	-
+620 	Mienshao 	Mienshao 	Focus Sash Focus Sash 	Low Kick 	Fake Out 	Hi Jump Kick 	U-turn 	Jolly 	- 	255 	- 	- 	- 	255
+614 	Beartic 	Beartic 	Sitrus Berry Sitrus Berry 	Swords Dance 	Avalanche 	Rock Slide 	Brick Break 	Adamant 	- 	255 	255 	- 	- 	-
+626 	Bouffalant 	Bouffalant 	Sitrus Berry Sitrus Berry 	Swords Dance 	Earthquake 	Head Charge 	Payback 	Adamant 	255 	255 	- 	- 	- 	-
+604 	Eelektross 	Eelektross 	Sitrus Berry Sitrus Berry 	Brick Break 	U-turn 	Grass Knot 	Wild Charge 	Brave 	255 	255 	- 	- 	- 	-
+567 	Archeops 	Archeops 	Choice Band Choice Band 	Aerial Ace 	Earthquake 	Head Smash 	U-turn 	Jolly 	- 	255 	- 	- 	- 	255
+539 	Sawk 	Sawk 	Life Orb Life Orb 	Close Combat 	Bulldoze 	Stone Edge 	Taunt 	Adamant 	- 	255 	- 	- 	- 	255
+621 	Druddigon 	Druddigon 	Choice Band Choice Band 	Outrage 	Earthquake 	Superpower 	Dragon Tail 	Adamant 	255 	255 	- 	- 	- 	-
+625 	Bisharp 	Bisharp 	Focus Sash Focus Sash 	Taunt 	Sucker Punch 	Rock Smash 	Iron Head 	Adamant 	255 	255 	- 	- 	- 	-
+534 	Conkeldurr 	Conkeldurr 	Iron Ball Iron Ball 	Fling 	Rock Slide 	Superpower 	Mach Punch 	Brave 	- 	255 	- 	- 	255 	-
+530 	Excadrill 	Excadrill 	Life Orb Life Orb 	Earthquake 	Aerial Ace 	Poison Jab 	Rock Slide 	Adamant 	- 	170 	170 	- 	170 	-
+553 	Krookodile 	Krookodile 	Liechi Berry Liechi Berry 	Earthquake 	Pursuit 	Low Sweep 	Rock Slide 	Jolly 	- 	255 	- 	- 	- 	255
+628 	Braviary 	Braviary 	Wacan Berry Wacan Berry 	Brave Bird 	Tailwind 	Superpower 	Giga Impact 	Adamant 	- 	255 	- 	- 	- 	255
+614 	Beartic 	Beartic 	Lax Incense Lax Incense 	Icy Wind 	Icicle Crash 	Rock Slide 	Brick Break 	Jolly 	- 	255 	- 	- 	- 	255
+626 	Bouffalant 	Bouffalant 	Life Orb Life Orb 	Earthquake 	Head Charge 	Payback 	Protect 	Adamant 	255 	255 	- 	- 	- 	-
+612 	Haxorus 	Haxorus 	Yache Berry Yache Berry 	Dragon Dance 	Dragon Claw 	Dragon Tail 	Earthquake 	Jolly 	- 	255 	- 	- 	- 	255
+567 	Archeops 	Archeops 	Sitrus Berry Sitrus Berry 	Rock Slide 	Earthquake 	Aerial Ace 	Protect 	Jolly 	- 	255 	- 	- 	- 	255
+
+
