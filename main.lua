@@ -50,7 +50,7 @@ local function parseLine(s)
 	return poke
 end
 
-local function printShowdown(p)
+local function printShowdownSingle(p)
 	print(string.format("%s @ %s",p.name, p.item:sub(1,#p.item / 2)))
 	print("Ability: ")
 	print(string.format("EVs: %s", evToString(p.ev):sub(1, #p.ev - 3)))
@@ -60,6 +60,12 @@ local function printShowdown(p)
 	print(string.format("- %s", p.move[3]))
 	print(string.format("- %s", p.move[4]))
 	print("")
+end
+
+local function printShowdown(pokemon)
+	for _,k in ipairs(pokemon) do
+		printShowdownSingle(k)
+	end
 end
 
 --[[
@@ -78,9 +84,7 @@ for k in file:lines() do
 	table.insert(pokemon, #pokemon + 1, parseLine(k))
 end
 
-for _,k in ipairs(pokemon) do
-	printShowdown(k)
-end
+printShowdown(pokemon)
 
 
 
