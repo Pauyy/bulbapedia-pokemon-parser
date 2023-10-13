@@ -20,7 +20,20 @@ local function evToString(ev)
 	return s
 end
 
+local function evToJSONObject(ev)
+	local s = "{"
+	for k,v in pairs(ev) do
+		if k ~= "ev" and v ~= '- ' and v ~= '-' then
+			s = s .. string.format('%q: %s,', k, v)
+		end
+	end
+	if #s == 1 then return "{}" end --no evs
+	s = s:sub(1, #s -1) .. "}"
+	return s
+end
+
 local function parseLine(s)
+	s = s .. "\t"
     local poke = {}
 	local v = s:gmatch("(.-)\t")
 	if repeats(s,'\t') < 14 then return poke end
@@ -68,6 +81,39 @@ local function printShowdown(pokemon)
 	end
 end
 
+local function printJSON(pokemon)
+	local index = {}
+	for _, k in ipairs(pokemon) do
+		if index[k.name] == nil then index[k.name] = {} end
+		table.insert(index[k.name], #index[k.name] + 1, k)
+	end
+
+	local json = {}
+	table.insert(json, #json + 1, "{")
+	for name_key, poke_data in pairs(index) do
+		table.insert(json, #json + 1, string.format("%q: {", name_key))
+		table.insert(json, #json + 1, '\t"sets": [')
+		for index, set in ipairs(poke_data) do
+			table.insert(json, #json + 1, "\t\t{")
+			table.insert(json, #json + 1, string.format('\t\t\t"item": %q,', set.item:sub(1,#set.item / 2)))
+			table.insert(json, #json + 1, string.format('\t\t\t"evs": %s,', evToJSONObject(set.ev)))
+			table.insert(json, #json + 1, string.format('\t\t\t"nature": %q,', set.nature))
+
+			table.insert(json, #json + 1, string.format('\t\t\t"moves": [%q, %q, %q, %q]', set.move[1], set.move[2], set.move[3], set.move[4]))
+
+			table.insert(json, #json + 1, "\t\t},")
+		end
+		json[#json] = json[#json]:sub(1, #json[#json] - 1) --remove trailing ,
+		table.insert(json, #json + 1, '\t]')
+		table.insert(json, #json + 1, "},")
+	end
+	json[#json] = json[#json]:sub(1, #json[#json] - 1) --remove trailing ,
+	table.insert(json, #json + 1, "}\n")
+
+	print(table.concat(json, "\n"))
+	return table.concat(json, "\n")
+end
+
 --[[
 Lopunny @ Lopunnite  
 Ability: Limber  
@@ -85,7 +131,7 @@ for k in file:lines() do
 end
 
 printShowdown(pokemon)
-
+--printJSON(pokemon)
 
 
 file:close()
