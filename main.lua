@@ -1,24 +1,43 @@
 local file = io.open('pokemon.txt')
-
+assert(file)
 --https://stackoverflow.com/questions/53210428/lua-count-repeating-characters-in-string
-function repeats(s,c)
+local function repeats(s,c)
     local _,n = s:gsub(c,"")
     return n
 end
 
-function loadLine(s)
-    local n=0
-    s=s..'\t'
+local function evToString(ev)
+	local s = ""
+	for k,v in pairs(ev) do
+		if k ~= "ev" and v ~= '- ' and v ~= '-' then
+			if k == 'spe' then
+				s = s .. v .. ' ' .. k .. ' / '
+			else
+				s = s .. v .. k .. ' / '
+			end
+		end
+	end
+	return s
+end
+
+local function parseLine(s)
+    local poke = {}
 	local v = s:gmatch("(.-)\t")
-	if repeats(s,'\t') < 15 then return end
-	
-	local _ = v() --Pokemon ID
-	local name = v()
+	if repeats(s,'\t') < 14 then return poke end
+	local _
+	_ = v() --Pokemon ID
+	poke.name = v()
 	_ = v() --name comes twice
-	local item = v() --item is seperated by space, lul
+	poke.item = v() --item is seperated by space, lul
 
 	local at1, at2, at3, at4 = v(), v(), v(), v()
-	local nature = v()
+	poke.move = {}
+	poke.move[1] = at1
+	poke.move[2] = at2
+	poke.move[3] = at3
+	poke.move[4] = at4
+
+	poke.nature = v()
 	local ev = {}
 	ev.hp  = v()
 	ev.atk = v()
@@ -26,30 +45,21 @@ function loadLine(s)
 	ev.spa = v()
 	ev.spd = v()
 	ev.spe = v()
-	
-	ev.ev = ""
-	for k,v in pairs(ev) do
-		if k ~= "ev" and v ~= '- ' and v ~= '-' then
-		--print(k, v, ev[k])
-		if k == 'spe' then
-			ev.ev = ev.ev .. v .. ' ' .. k .. ' / '
-		else
-			ev.ev = ev.ev .. v .. k .. ' / '
-		end
-		end
-	end
-	--print()
+	poke.ev = ev
 
-	print(string.format("%s @ %s",name, item:sub(1,#item / 2)))
+	return poke
+end
+
+local function printShowdown(p)
+	print(string.format("%s @ %s",p.name, p.item:sub(1,#p.item / 2)))
 	print("Ability: ")
-	print(string.format("EVs: %s", ev.ev:sub(1, #ev - 3)))
-	print(string.format("%s Nature", nature:sub(1, #nature - 1)))
-	print(string.format("- %s", at1))
-	print(string.format("- %s", at2))
-	print(string.format("- %s", at3))
-	print(string.format("- %s", at4))
+	print(string.format("EVs: %s", evToString(p.ev):sub(1, #p.ev - 3)))
+	print(string.format("%s Nature", p.nature:sub(1, #p.nature - 1)))
+	print(string.format("- %s", p.move[1]))
+	print(string.format("- %s", p.move[2]))
+	print(string.format("- %s", p.move[3]))
+	print(string.format("- %s", p.move[4]))
 	print("")
---]]
 end
 
 --[[
@@ -63,8 +73,15 @@ Jolly Nature
 - Power-Up Punch  
 - Encore  
 ]]
+local pokemon = {}
 for k in file:lines() do
-	loadLine(k)
+	table.insert(pokemon, #pokemon + 1, parseLine(k))
 end
+
+for _,k in ipairs(pokemon) do
+	printShowdown(k)
+end
+
+
 
 file:close()

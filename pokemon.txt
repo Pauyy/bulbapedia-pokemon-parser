@@ -35,5 +35,3 @@
 626 	Bouffalant 	Bouffalant 	Life Orb Life Orb 	Earthquake 	Head Charge 	Payback 	Protect 	Adamant 	255 	255 	- 	- 	- 	-
 612 	Haxorus 	Haxorus 	Yache Berry Yache Berry 	Dragon Dance 	Dragon Claw 	Dragon Tail 	Earthquake 	Jolly 	- 	255 	- 	- 	- 	255
 567 	Archeops 	Archeops 	Sitrus Berry Sitrus Berry 	Rock Slide 	Earthquake 	Aerial Ace 	Protect 	Jolly 	- 	255 	- 	- 	- 	255
-
-
