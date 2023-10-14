@@ -9,15 +9,11 @@ end
 local function evToString(ev)
 	local s = ""
 	for k,v in pairs(ev) do
-		if k ~= "ev" and v ~= '- ' and v ~= '-' then
-			if k == 'spe' then
-				s = s .. v .. ' ' .. k .. ' / '
-			else
-				s = s .. v .. k .. ' / '
-			end
+		if v ~= '-' then
+			s = s .. v .. ' ' .. k .. ' / '
 		end
 	end
-	return s
+	return s:sub(1, #s - 3)
 end
 
 local function evToJSONObject(ev)
@@ -35,13 +31,19 @@ end
 local function parseLine(s)
 	s = s .. "\t"
     local poke = {}
-	local v = s:gmatch("(.-)\t")
+	local v = s:gmatch("(.-)[ ]?\t")
 	if repeats(s,'\t') < 14 then return poke end
 	local _
 	_ = v() --Pokemon ID
 	poke.name = v()
-	_ = v() --name comes twice
-	poke.item = v() --item is seperated by space, lul
+	_ = v() --name
+	poke.item = v() --item is returned twice
+
+	if math.fmod(#poke.item, 4) == 3 then
+		poke.item = poke.item:sub(1,(#poke.item - 1) / 2 )
+	else
+		poke.item = poke.item:sub(1,#poke.item / 2)
+	end
 
 	local at1, at2, at3, at4 = v(), v(), v(), v()
 	poke.move = {}
@@ -64,10 +66,10 @@ local function parseLine(s)
 end
 
 local function printShowdownSingle(p)
-	print(string.format("%s @ %s",p.name, p.item:sub(1,#p.item / 2)))
+	print(string.format("%s @ %s",p.name, p.item))
 	print("Ability: ")
-	print(string.format("EVs: %s", evToString(p.ev):sub(1, #p.ev - 3)))
-	print(string.format("%s Nature", p.nature:sub(1, #p.nature - 1)))
+	print(string.format("EVs: %s", evToString(p.ev)))
+	print(string.format("%s Nature", p.nature))
 	print(string.format("- %s", p.move[1]))
 	print(string.format("- %s", p.move[2]))
 	print(string.format("- %s", p.move[3]))
@@ -95,7 +97,7 @@ local function printJSON(pokemon)
 		table.insert(json, #json + 1, '\t"sets": [')
 		for index, set in ipairs(poke_data) do
 			table.insert(json, #json + 1, "\t\t{")
-			table.insert(json, #json + 1, string.format('\t\t\t"item": %q,', set.item:sub(1,#set.item / 2)))
+			table.insert(json, #json + 1, string.format('\t\t\t"item": %q,', set.item))
 			table.insert(json, #json + 1, string.format('\t\t\t"evs": %s,', evToJSONObject(set.ev)))
 			table.insert(json, #json + 1, string.format('\t\t\t"nature": %q,', set.nature))
 
