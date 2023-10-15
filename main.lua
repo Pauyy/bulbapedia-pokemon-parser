@@ -32,7 +32,7 @@ local function parseLine(s)
 	s = s .. "\t"
     local poke = {}
 	local v = s:gmatch("(.-)[ ]?\t")
-	if repeats(s,'\t') < 14 then return poke end
+	if repeats(s,'\t') < 14 then poke.invalid = true return poke end
 	local _
 	_ = v() --Pokemon ID
 	poke.name = v()
@@ -79,15 +79,19 @@ end
 
 local function printShowdown(pokemon)
 	for _,k in ipairs(pokemon) do
-		printShowdownSingle(k)
+		if k.invalid == nil then
+			printShowdownSingle(k)
+		end
 	end
 end
 
 local function printJSON(pokemon)
 	local index = {}
 	for _, k in ipairs(pokemon) do
-		if index[k.name] == nil then index[k.name] = {} end
-		table.insert(index[k.name], #index[k.name] + 1, k)
+		if k.invalid == nil then
+			if index[k.name] == nil then index[k.name] = {} end
+			table.insert(index[k.name], #index[k.name] + 1, k)
+		end
 	end
 
 	local json = {}
