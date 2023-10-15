@@ -1,5 +1,5 @@
 # bulbapedia-pokemon-parser
-Parses Pokemon from Bulbapedia into PokemonShowdown format
+Parses Pokemon Lists from Bulbapedia
 
 # usage
 copy the table of pokemon from a bulbapedia page 
@@ -13,5 +13,10 @@ lua main.lua
 copy or look at the pokemon in the pokemon showdown format
 ![console](./pictures/console.png)
 
-
+optionally uncomment and comment lines
+```lua
+printShowdown(pokemon)
+--printJSON(pokemon)
+```
+to get a json output
 
