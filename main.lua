@@ -120,17 +120,7 @@ local function printJSON(pokemon)
 	return table.concat(json, "\n")
 end
 
---[[
-Lopunny @ Lopunnite  
-Ability: Limber  
-Tera Type: Normal  
-EVs: 252 Atk / 4 SpD / 252 Spe  
-Jolly Nature  
-- Return  
-- High Jump Kick  
-- Power-Up Punch  
-- Encore  
-]]
+
 local pokemon = {}
 for k in file:lines() do
 	table.insert(pokemon, #pokemon + 1, parseLine(k))
