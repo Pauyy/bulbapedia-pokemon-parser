@@ -135,9 +135,8 @@ local pokemon = {}
 for k in file:lines() do
 	table.insert(pokemon, #pokemon + 1, parseLine(k))
 end
+file:close()
+
 
 printShowdown(pokemon)
 --printJSON(pokemon)
-
-
-file:close()
