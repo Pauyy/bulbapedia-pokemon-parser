@@ -79,7 +79,7 @@ end
 
 local function printShowdown(pokemon)
 	for _,k in ipairs(pokemon) do
-		if k.invalid == nil then
+		if not k.invalid then
 			printShowdownSingle(k)
 		end
 	end
@@ -88,7 +88,7 @@ end
 local function printJSON(pokemon)
 	local index = {}
 	for _, k in ipairs(pokemon) do
-		if k.invalid == nil then
+		if not k.invalid then
 			if index[k.name] == nil then index[k.name] = {} end
 			table.insert(index[k.name], #index[k.name] + 1, k)
 		end
