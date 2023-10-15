@@ -93,7 +93,7 @@ local function printJSON(pokemon)
 	local json = {}
 	table.insert(json, #json + 1, "{")
 	for name_key, poke_data in pairs(index) do
-		table.insert(json, #json + 1, string.format("%q: {", name_key))
+		table.insert(json, #json + 1, string.format("%q: {", name_key:lower()))
 		table.insert(json, #json + 1, '\t"sets": [')
 		for index, set in ipairs(poke_data) do
 			table.insert(json, #json + 1, "\t\t{")
